@@ -16,19 +16,17 @@
       public function show_price(int $price){
         $this->price = $price;
       }
-
+      
       public function __construct(string $name, int $price){
         $this->name = $name;
         $this->price = $price;
       }
-    }
-    $food = new Food('potato', 250);
-      print_r($food);
-    ?>
-  </p>
 
-  <p>
-    <?php
+      public function getPrice(): int {
+        return $this->price;
+      }
+    }
+
     class Animal{
       private $name;
       private $height;
@@ -43,10 +41,22 @@
         $this->height = $height;
         $this->weight = $weight;
       }
+
+      public function getHeight(): int {
+        return $this->height;
+      }
     }
 
+    $food = new Food('potato', 250);
+      print_r($food);
+      echo '<br>';
     $animal = new Animal('dog', 60, 5000);
       print_r($animal);
+      echo '<br>';
+      echo $food->getPrice(); 
+      echo '<br>';
+      echo $animal->getHeight(); 
+
     ?>
   </p>
 </body>
