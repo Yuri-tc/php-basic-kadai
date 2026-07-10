@@ -21,12 +21,7 @@
         $this->name = $name;
         $this->price = $price;
       }
-
-      public function getPrice(): int {
-        return $this->price;
-      }
     }
-
     class Animal{
       private $name;
       private $height;
@@ -41,21 +36,19 @@
         $this->height = $height;
         $this->weight = $weight;
       }
-
-      public function getHeight(): int {
-        return $this->height;
-      }
     }
-
     $food = new Food('potato', 250);
       print_r($food);
       echo '<br>';
+
     $animal = new Animal('dog', 60, 5000);
       print_r($animal);
       echo '<br>';
-      echo $food->getPrice(); 
+      
+      $food->show_price(250);
       echo '<br>';
-      echo $animal->getHeight(); 
+      $animal->show_height(60);
+
 
     ?>
   </p>
